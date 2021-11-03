@@ -35,7 +35,7 @@ const Leaderboard = () => {
                 </thead>
                 <tbody>
                     {users.map((user, id) => (
-                        <tr>
+                        <tr key={id}>
                             <th>{id + 1}</th>
                             <th>{user.name}</th>
                             <th>
