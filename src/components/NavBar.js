@@ -1,9 +1,17 @@
 import { Navbar, Nav, Container, NavbarBrand, Button } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import setAuthedUser from "../actions/authedUser";
 
 const NavBar = () => {
 
     const authedUser = useSelector(state => state.authedUser)
+    const dispatch = useDispatch()
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        dispatch(setAuthedUser(null))
+    }
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
@@ -14,9 +22,9 @@ const NavBar = () => {
                 </NavbarBrand>
 
                 <Nav className="me-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/add">New Question</Nav.Link>
-                    <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
+                    <Nav.Link as={Link} to="/">Home</Nav.Link>
+                    <Nav.Link as={Link} to="/add">New Question</Nav.Link>
+                    <Nav.Link as={Link} to="/leaderboard">Leaderboard</Nav.Link>
                 </Nav>
 
                 <Navbar className="justify-content-end">
@@ -26,7 +34,7 @@ const NavBar = () => {
                             : 'Log in'}
                     </Navbar.Text>
                     {authedUser !== null && (
-                        <Button variant="light">Log Out</Button>
+                        <Button variant="light" onClick={handleLogout}>Log Out</Button>
                     )}
 
                 </Navbar>
