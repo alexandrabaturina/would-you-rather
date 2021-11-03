@@ -9,7 +9,8 @@ const Dashboard = ({ title, ids }) => {
             id: state.questions[id].id,
             author: state.questions[id].author,
             optionOne: state.questions[id].optionOne.text,
-            optionTwo: state.questions[id].optionTwo.text
+            optionTwo: state.questions[id].optionTwo.text,
+            timestamp: state.questions[id].timestamp
         }))
     )
 
@@ -17,8 +18,10 @@ const Dashboard = ({ title, ids }) => {
         <div>
             <h1>{title}</h1>
             <ul>
-                {questions.map(question =>
-                    <li key={question.id}>Would you rather {question.optionOne} or {question.optionTwo}?</li>)}
+                {questions
+                    .sort((a, b) => b.timestamp - a.timestamp)
+                    .map(question =>
+                        <li key={question.id}>Would you rather {question.optionOne} or {question.optionTwo}?</li>)}
             </ul>
         </div>
     )
