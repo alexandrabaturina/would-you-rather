@@ -1,22 +1,22 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Container, Button } from "react-bootstrap";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import { handleAddQuestion } from "../actions/questions";
 
 const NewQuestion = () => {
 
+    const dispatch = useDispatch();
+    const authedUser = useSelector(state => state.authedUser);
+
     const validationSchema = Yup.object({
         optionOne: Yup.string()
-            .min(8, 'The answer should be at least 8 characters long.')
+            .min(6, 'The answer should be at least 6 characters long.')
             .required('*Option one is required'),
         optionTwo: Yup.string()
-            .min(8, 'The answer should be at least 8 characters long.')
+            .min(6, 'The answer should be at least 6 characters long.')
             .required('*Option two is required')
     });
-
-    const addQuestion = (values) => {
-        console.log('Option one: ', values.optionOne)
-        console.log('Option two: ', values.optionTwo)
-    };
 
     return (
         <Container>
@@ -31,7 +31,11 @@ const NewQuestion = () => {
                 validateOnChange={false}
                 validateOnBlur={false}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
-                    addQuestion(values)
+                    dispatch(handleAddQuestion({
+                        optionOneText: values.optionOne,
+                        optionTwoText: values.optionTwo,
+                        author: authedUser
+                    }))
                     setSubmitting(false)
                     resetForm()
                 }}>
