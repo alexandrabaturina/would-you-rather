@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from 'react-router-dom';
 import { Container, Button } from "react-bootstrap";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
@@ -6,8 +7,14 @@ import { handleAddQuestion } from "../actions/questions";
 
 const NewQuestion = () => {
 
+    let history = useHistory();
+
     const dispatch = useDispatch();
     const authedUser = useSelector(state => state.authedUser);
+
+    const redirectToHome = () => {
+        history.push("/");
+    }
 
     const validationSchema = Yup.object({
         optionOne: Yup.string()
@@ -38,6 +45,7 @@ const NewQuestion = () => {
                     }))
                     setSubmitting(false)
                     resetForm()
+                    redirectToHome()
                 }}>
                 {formik => (
                     <Form>
