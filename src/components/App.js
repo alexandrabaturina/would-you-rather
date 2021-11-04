@@ -9,6 +9,7 @@ import NavBar from './NavBar';
 import Question from './Question';
 import NewQuestion from './NewQuestion';
 import Leaderboard from './Leaderboard';
+import NotFound from './NotFound';
 
 const App = () => {
 
@@ -34,6 +35,7 @@ const App = () => {
             <Route path='/questions/:question_id' component={Question} />
             <Route path='/add' component={NewQuestion} />
             <Route path='/leaderboard' component={Leaderboard} />
+            <Route path='/404' component={NotFound} />
           </>
         </>}
 
