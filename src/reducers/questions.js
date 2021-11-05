@@ -8,9 +8,10 @@ const questions = (state = {}, action) => {
                 ...action.questions
             };
         case ADD_QUESTION:
+            const question = action.question
             return {
                 ...state,
-                [action.question.id]: action.question
+                [question.id]: question
             }
         case SAVE_ANSWER:
             const { authedUser, qid: id, answer } = action.info;

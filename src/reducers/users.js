@@ -9,23 +9,24 @@ const users = (state = {}, action) => {
                 ...action.users,
             };
         case ADD_QUESTION:
+            const { author, id } = action.question
             return {
                 ...state,
-                [action.question.author]: {
-                    ...state[action.question.author],
-                    questions: state[action.question.author].questions
-                        .concat([action.question.id])
+                [author]: {
+                    ...state[author],
+                    questions: state[author].questions
+                        .concat([id])
                 }
             };
         case SAVE_ANSWER:
-            const { authedUser, qid: id, answer } = action.info
+            const { authedUser, qid, answer } = action.info
             return {
                 ...state,
                 [authedUser]: {
                     ...state[authedUser],
                     answers: {
                         ...state[authedUser].answers,
-                        [id]: answer
+                        [qid]: answer
                     }
                 }
             }
