@@ -8,7 +8,7 @@ const Leaderboard = () => {
 
         Object.values(state.users)
             .map(user => ({
-                name: user.name,
+                name: user.id,
                 avatar: user.avatarURL,
                 questions: user.questions.length,
                 answers: Object.keys(user.answers).length,
