@@ -1,7 +1,8 @@
 import { Formik, Field, Form } from 'formik';
 import { Container, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { handleSaveAnswer } from '../actions/questions';
 
 const VoteForm = ({ id }) => {
 
@@ -10,9 +11,10 @@ const VoteForm = ({ id }) => {
     const optionTwoText = useSelector(state => state.questions[id].optionTwo.text)
 
     let history = useHistory()
+    const dispatch = useDispatch()
 
     const redirectToHome = () => {
-        history.push("/")
+        history.push('/')
     }
 
     return (
@@ -21,6 +23,10 @@ const VoteForm = ({ id }) => {
                 initialValues={{ option: '' }}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
                     console.log('Form submitted with ', values.option)
+                    dispatch(handleSaveAnswer({
+                        qid: id,
+                        answer: values.option
+                    }))
                     setSubmitting(false);
                     resetForm();
                     redirectToHome();
