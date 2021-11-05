@@ -11,10 +11,6 @@ const VoteForm = ({ id }) => {
 
     let history = useHistory()
 
-    const handleSubmit = (values) => {
-        console.log('Form submitted ', values)
-    }
-
     const redirectToHome = () => {
         history.push("/")
     }
@@ -24,32 +20,33 @@ const VoteForm = ({ id }) => {
             <Formik
                 initialValues={{ option: '' }}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
-                    handleSubmit(values);
+                    console.log('Form submitted with ', values.option)
                     setSubmitting(false);
                     resetForm();
                     redirectToHome();
                 }}>
                 {formik => (
                     <Form>
-                        <div role="group" className='voting-options'>
-                            <label>
-                                <Field type="radio" name="option" value="optionOne" />
-                                {optionOneText}
-                            </label>
-                            <label>
-                                <Field type="radio" name="option" value="optionTwo" />
-                                {optionTwoText}
-                            </label>
-                            <div className='btn-container'>
-                                <Button type="submit">Vote</Button>
-                            </div>
+                        <label>
+                            <Field name="option" value="optionOne" type="radio" />
+                            {optionOneText}
+                        </label>
+
+                        <label>
+                            <Field name="option" value="optionTwo" type="radio" />
+                            {optionTwoText}
+                        </label>
+
+                        <div className='btn-container'>
+                            {!formik.values.option
+                                ? <Button type="submit" disabled>Vote</Button>
+                                : <Button type="submit">Vote</Button>}
                         </div>
                     </Form>
                 )}
             </Formik>
-        </Container>
-
+        </Container >
     )
-}
+};
 
 export default VoteForm;
