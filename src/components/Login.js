@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Container, Form, Button } from "react-bootstrap"
 import setAuthedUser from "../actions/authedUser";
 
 const Login = () => {
@@ -25,18 +26,22 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <Container>
             <h1>Login</h1>
-            <form>
-                <select defaultValue={'DEFAULT'} onChange={handleSelect}>
+            <Form>
+                <Form.Select defaultValue={'DEFAULT'} onChange={handleSelect}>
                     <option value={'DEFAULT'} disabled>Select a user</option>
                     {users.map(user =>
                         <option key={user.id} data-id={user.id}>{user.name}</option>)}
-                </select>
+                </Form.Select>
 
-                <button onClick={handleSubmit}>Login</button>
-            </form>
-        </div>
+                <div className='btn-container'>
+                    <Button onClick={handleSubmit}>
+                        Login
+                    </Button>
+                </div>
+            </Form>
+        </Container>
     )
 };
 
