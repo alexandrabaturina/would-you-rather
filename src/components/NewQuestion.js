@@ -71,9 +71,11 @@ const NewQuestion = () => {
                         {formik.errors.optionTwo ?
                             <div className="validation-error">{formik.errors.optionTwo}</div> : null}
 
-                        {!formik.values.optionOne || !formik.values.optionTwo ?
-                            <Button type="submit" disabled>Add Question</Button> :
-                            <Button type="submit">Add Question</Button>}
+                        <div className='btn-container'>
+                            {!formik.values.optionOne || !formik.values.optionTwo
+                                ? <Button type="submit" disabled>Add Question</Button>
+                                : <Button type="submit">Add Question</Button>}
+                        </div>
                     </Form>
                 )}
             </Formik>
