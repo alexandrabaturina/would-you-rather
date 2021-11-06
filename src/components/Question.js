@@ -9,16 +9,22 @@ const Question = () => {
 
     //Get data from the store
     const ids = useSelector(state => Object.keys(state.questions));
-    const avatar = useSelector(state => state.users[state.authedUser].avatarURL);
-    const author = useSelector(state => state.questions[id].author);
-    const isAnswered = useSelector(state =>
-        (state.questions[id].optionOne.votes.indexOf(state.authedUser) !== -1) ||
-        (state.questions[id].optionTwo.votes.indexOf(state.authedUser) !== -1)
-    )
 
     const isValid = ids.indexOf(id) === -1
         ? false
         : true;
+
+    const avatar = useSelector(state => isValid
+        ? state.users[state.authedUser].avatarURL
+        : null);
+    const author = useSelector(state => isValid ?
+        state.questions[id].author
+        : null);
+    const isAnswered = useSelector(state => isValid
+        ? (state.questions[id].optionOne.votes.indexOf(state.authedUser) !== -1) ||
+        (state.questions[id].optionTwo.votes.indexOf(state.authedUser) !== -1)
+        : null
+    )
 
     if (!isValid) {
         return <Redirect to='/404' />
@@ -29,7 +35,7 @@ const Question = () => {
             <div className='question-card'>
                 <div className='question-card-header'>
                     <img src={avatar} alt="Avatar" className='avatar' />
-                    <div>{author} asks</div>
+                    <div className='author-info'>{author} asks</div>
                 </div>
                 <h1>Would you rather...</h1>
                 {isAnswered
