@@ -73,8 +73,8 @@ const NewQuestion = () => {
 
                         <div className='btn-container'>
                             {!formik.values.optionOne || !formik.values.optionTwo
-                                ? <Button type="submit" disabled>Add Question</Button>
-                                : <Button type="submit">Add Question</Button>}
+                                ? <Button variant="dark" type="submit" disabled>Add Question</Button>
+                                : <Button variant="dark" type="submit">Add Question</Button>}
                         </div>
                     </Form>
                 )}
