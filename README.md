@@ -3,8 +3,6 @@
 ## Overview
 **Would You Rather?** is a frontend for web app that allowa a user play the "Would You Rather?" game. The game goes like this: A user is asked a question in the form: "Would you rather [option A] or [option B] ?". Answering "neither" or "both" is against the rules.
 
-Users are able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
-
 **Would You Rather** app is the capstone for [Udacity React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019?gclid=Cj0KCQjwrJOMBhCZARIsAGEd4VH6s1AtGuH3NE8TL2ScAp7Q_bEcZmYN70OLRFebZjCVR3Zmr4xCT3waAmMZEALw_wcB&utm_campaign=12712700850_c&utm_keyword=react%20udacity_e&utm_medium=ads_r&utm_source=gsem_brand&utm_term=124530973630) program.
 
 The project has the following goals:
@@ -12,7 +10,13 @@ The project has the following goals:
 * Practice using [hooks](https://reactjs.org/docs/hooks-overview.html)
 * Manage state using [Redux](https://redux.js.org/usage/configuring-your-store)
 * Leverage [React Router](https://reactrouter.com/web/guides/quick-start)
-
+## Features
+Users are able to:
+* Answer questions
+* See which questions they haven’t answered
+* Ssee how other people have voted
+* Post questions
+* See the ranking of users on the leaderboard
 ## Getting Started
 To run **Would You Rather** in dev mode:
 1. Clone this repo.
