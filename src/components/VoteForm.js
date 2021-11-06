@@ -13,10 +13,6 @@ const VoteForm = ({ id }) => {
     let history = useHistory()
     const dispatch = useDispatch()
 
-    const redirectToHome = () => {
-        history.push('/')
-    }
-
     return (
         <Container>
             <Formik
@@ -29,7 +25,7 @@ const VoteForm = ({ id }) => {
                     }))
                     setSubmitting(false);
                     resetForm();
-                    redirectToHome();
+                    history.push(`/questions/${id}`);
                 }}>
                 {formik => (
                     <Form>
@@ -45,8 +41,8 @@ const VoteForm = ({ id }) => {
 
                         <div className='btn-container'>
                             {!formik.values.option
-                                ? <Button type="submit" disabled>Vote</Button>
-                                : <Button type="submit">Vote</Button>}
+                                ? <Button variant="outline-dark" type="submit" disabled>Vote</Button>
+                                : <Button variant="outline-dark" type="submit">Vote</Button>}
                         </div>
                     </Form>
                 )}
