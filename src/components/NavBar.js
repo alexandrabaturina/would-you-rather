@@ -34,7 +34,12 @@ const NavBar = () => {
                             : 'Log in'}
                     </Navbar.Text>
                     {authedUser !== null && (
-                        <Button variant="light" onClick={handleLogout}>Log Out</Button>
+                        <Button
+                            className="nav-button"
+                            variant="light"
+                            onClick={handleLogout}>
+                            Log Out
+                        </Button>
                     )}
 
                 </Navbar>

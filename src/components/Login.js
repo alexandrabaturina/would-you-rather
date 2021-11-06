@@ -36,7 +36,7 @@ const Login = () => {
                 </Form.Select>
 
                 <div className='btn-container'>
-                    <Button onClick={handleSubmit}>
+                    <Button variant='outline-dark' onClick={handleSubmit}>
                         Login
                     </Button>
                 </div>

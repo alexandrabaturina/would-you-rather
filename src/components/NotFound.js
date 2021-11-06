@@ -17,11 +17,11 @@ const NotFound = () => {
                 <div className='not-found'>
                     4<FontAwesomeIcon icon={faFrown} />4
                 </div>
-                <div>Oops! This page does not exist.</div>
+                <div>Oops! This page does not exist...</div>
             </h1>
-            <div className='back-button'>
+            <div className='btn-container'>
                 <Button
-                    size="lg"
+                    variant="outline-dark"
                     onClick={() => handleClick()}>
                     {`< Back`}
                 </Button>

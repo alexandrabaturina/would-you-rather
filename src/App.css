@@ -1,3 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  font-family: 'Montserrat';
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #222a3f;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+button {
+  width: 150px;
+}
+
+th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color:#d6e1ef;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  padding-top: 20px;
+}
+
+.question-item {
+  border: 1px solid #d6e1ef;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.question-info > p {
+  margin-bottom: 0px;
+}
+
+.author-info {
+  font-size: 0.9em;
+  color: #566885;
+}
+
+.dashboard-button {
+  width: 70px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.validation-error {
+  color: #bd0113;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.error-highlight {
+  border: 1px solid #bd0113;
+}
+
 .navbar-username {
   padding-right: 10px;
+}
+
+.nav-button {
+  width: 100px;
+}
+
+.nav-button:hover {
+  background-color: #bebebe;
+  font-weight: 700;
+}
+
+ul.nav.nav-tabs {
+  padding-top: 20px;
+}
+
+.avatar {
+  width: 50px;
+}
+
+ul.nav.nav-pills {
+  align-items: center;
+}
+
+.not-found {
+  font-size: 6em;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.question-card {
+  width: 70%;
+}
+
+.question-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.vote-details {
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.vote-option {
+  border: 1px solid #d6e1ef;
+  padding: 10px 10px 20px 10px;
+  margin-bottom: 30px;
+}
+
+.user-option {
+  border: 2px solid #6e9a44;
+  padding: 10px 10px 20px 10px;
+  margin-bottom: 30px;
+}
+
+.user-answer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  color: #6e9a44;
+  font-size: 0.8em;
+}
+
+.user-answer > span {
+  padding-left: 5px;
+}
+
+.voting-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.option-text {
+  display: flex;
+  flex-direction: row;
+}
+
+label > input[type="radio"] {
+  margin-right: 10px;
+}
+
+.btn-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.progress {
+  height: 30px;
 }
