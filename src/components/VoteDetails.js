@@ -13,12 +13,15 @@ const VoteDetails = ({ id }) => {
             optionOne: {
                 text: state.questions[id].optionOne.text,
                 total: votesOne.length,
-                percentage: votesOne.length / (votesOne.length + votesTwo.length) * 100
+                percentage: (votesOne.length / (votesOne.length + votesTwo.length) * 100)
+                    .toFixed(2)
+
             },
             optionTwo: {
                 text: state.questions[id].optionTwo.text,
                 total: votesTwo.length,
-                percentage: votesTwo.length / (votesOne.length + votesTwo.length) * 100
+                percentage: (votesTwo.length / (votesOne.length + votesTwo.length) * 100)
+                    .toFixed(2)
             },
             userVote: state.users[state.authedUser].answers[id] || null
         }
@@ -39,6 +42,7 @@ const VoteDetails = ({ id }) => {
                     <p>{optionOne.text}</p>
                     <span>Votes: {optionOne.total}</span>
                     <ProgressBar
+                        className="progress"
                         now={optionOne.percentage}
                         variant="info"
                         label={`${optionOne.percentage}%`} />
@@ -53,6 +57,7 @@ const VoteDetails = ({ id }) => {
                     <p>{optionTwo.text}</p>
                     <span>Votes: {optionTwo.total}</span>
                     <ProgressBar
+                        className="progress"
                         now={optionTwo.percentage}
                         variant="warning"
                         label={`${optionTwo.percentage}%`} />
