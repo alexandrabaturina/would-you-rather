@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import handleInitialData from '../actions/shared';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import LoadingBar from 'react-redux-loading';
-import Login from './Login';
-import Home from './Home';
-import NavBar from './NavBar';
-import Question from './Question';
-import NewQuestion from './NewQuestion';
-import Leaderboard from './Leaderboard';
-import NotFound from './NotFound';
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import handleInitialData from '../actions/shared'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import LoadingBar from 'react-redux-loading'
+import Login from './Login'
+import Home from './Home'
+import NavBar from './NavBar'
+import Question from './Question'
+import NewQuestion from './NewQuestion'
+import Leaderboard from './Leaderboard'
+import NotFound from './NotFound'
 
 const App = () => {
 
@@ -20,7 +20,7 @@ const App = () => {
   // Get initial data
   useEffect(() => {
     dispatch(handleInitialData())
-  }, []);
+  }, [])
 
   return (
     <Router>
@@ -42,6 +42,6 @@ const App = () => {
 
     </Router>
   )
-};
+}
 
-export default App;
+export default App

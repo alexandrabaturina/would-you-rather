@@ -1,4 +1,4 @@
-import { ADD_QUESTION, RECEIVE_QUESTIONS, SAVE_ANSWER } from "../actions/questions";
+import { ADD_QUESTION, RECEIVE_QUESTIONS, SAVE_ANSWER } from "../actions/questions"
 
 const questions = (state = {}, action) => {
     switch (action.type) {
@@ -6,7 +6,7 @@ const questions = (state = {}, action) => {
             return {
                 ...state,
                 ...action.questions
-            };
+            }
         case ADD_QUESTION:
             const question = action.question
             return {
@@ -14,7 +14,7 @@ const questions = (state = {}, action) => {
                 [question.id]: question
             }
         case SAVE_ANSWER:
-            const { authedUser, qid: id, answer } = action.info;
+            const { authedUser, qid: id, answer } = action.info
             return {
                 ...state,
                 [id]: {
@@ -26,8 +26,8 @@ const questions = (state = {}, action) => {
                 }
             }
         default:
-            return state;
+            return state
     }
-};
+}
 
-export default questions;
+export default questions

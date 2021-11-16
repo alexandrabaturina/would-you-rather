@@ -1,13 +1,13 @@
-import { useSelector } from 'react-redux';
-import { ProgressBar } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux'
+import { ProgressBar } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 const VoteDetails = ({ id }) => {
 
     const data = useSelector(state => {
-        const votesOne = state.questions[id].optionOne.votes;
-        const votesTwo = state.questions[id].optionTwo.votes;
+        const votesOne = state.questions[id].optionOne.votes
+        const votesTwo = state.questions[id].optionTwo.votes
 
         return {
             optionOne: {
@@ -15,7 +15,6 @@ const VoteDetails = ({ id }) => {
                 total: votesOne.length,
                 percentage: (votesOne.length / (votesOne.length + votesTwo.length) * 100)
                     .toFixed(2)
-
             },
             optionTwo: {
                 text: state.questions[id].optionTwo.text,
@@ -25,9 +24,9 @@ const VoteDetails = ({ id }) => {
             },
             userVote: state.users[state.authedUser].answers[id] || null
         }
-    });
+    })
 
-    const { optionOne, optionTwo, userVote } = data;
+    const { optionOne, optionTwo, userVote } = data
 
     return (
         <>
@@ -63,9 +62,8 @@ const VoteDetails = ({ id }) => {
                         label={`${optionTwo.percentage}%`} />
                 </div>
             </div>
-
         </>
     )
-};
+}
 
-export default VoteDetails;
+export default VoteDetails

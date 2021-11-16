@@ -1,6 +1,6 @@
-import { useSelector } from "react-redux";
-import { Button } from 'react-bootstrap';
-import { useHistory } from "react-router";
+import { useSelector } from "react-redux"
+import { Button } from 'react-bootstrap'
+import { useHistory } from "react-router"
 
 const Dashboard = ({ title, ids }) => {
 
@@ -14,12 +14,12 @@ const Dashboard = ({ title, ids }) => {
             optionTwo: state.questions[id].optionTwo.text,
             timestamp: state.questions[id].timestamp
         }))
-    );
+    )
 
-    let history = useHistory();
+    let history = useHistory()
 
     const handleClick = (question) => {
-        history.push(`/questions/${question}`);
+        history.push(`/questions/${question}`)
     }
 
     return (
@@ -51,6 +51,6 @@ const Dashboard = ({ title, ids }) => {
             </div>
         </div>
     )
-};
+}
 
-export default Dashboard;
+export default Dashboard

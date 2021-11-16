@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Container, Form, Button } from "react-bootstrap"
-import setAuthedUser from "../actions/authedUser";
+import setAuthedUser from "../actions/authedUser"
 
 const Login = () => {
 
@@ -9,21 +9,21 @@ const Login = () => {
     const users = useSelector(state =>
         Object.values(state.users)
             .map(item => ({ name: item.name, id: item.id }))
-    );
+    )
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    const [selectedUser, setSelectedUser] = useState(null);
+    const [selectedUser, setSelectedUser] = useState(null)
 
     const handleSelect = e => {
         setSelectedUser(e.target.options[e.target.selectedIndex].dataset.id)
-    };
+    }
 
     const handleSubmit = e => {
-        e.preventDefault();
-        dispatch(setAuthedUser(selectedUser));
+        e.preventDefault()
+        dispatch(setAuthedUser(selectedUser))
 
-    };
+    }
 
     return (
         <Container>
@@ -43,6 +43,6 @@ const Login = () => {
             </Form>
         </Container>
     )
-};
+}
 
-export default Login;
+export default Login

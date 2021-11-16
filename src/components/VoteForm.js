@@ -1,8 +1,8 @@
-import { Formik, Field, Form } from 'formik';
-import { Container, Button } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { handleSaveAnswer } from '../actions/questions';
+import { Formik, Field, Form } from 'formik'
+import { Container, Button } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { handleSaveAnswer } from '../actions/questions'
 
 const VoteForm = ({ id }) => {
 
@@ -23,9 +23,9 @@ const VoteForm = ({ id }) => {
                         qid: id,
                         answer: values.option
                     }))
-                    setSubmitting(false);
-                    resetForm();
-                    history.push(`/questions/${id}`);
+                    setSubmitting(false)
+                    resetForm()
+                    history.push(`/questions/${id}`)
                 }}>
                 {formik => (
                     <Form>
@@ -49,6 +49,6 @@ const VoteForm = ({ id }) => {
             </Formik>
         </Container >
     )
-};
+}
 
-export default VoteForm;
+export default VoteForm

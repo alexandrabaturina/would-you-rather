@@ -1,14 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFrown } from '@fortawesome/free-solid-svg-icons';
-import { Button } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFrown } from '@fortawesome/free-solid-svg-icons'
+import { Button } from 'react-bootstrap'
+import { useHistory } from 'react-router'
 
 const NotFound = () => {
 
-    let history = useHistory();
+    let history = useHistory()
 
     const handleClick = () => {
-        history.goBack();
+        history.goBack()
     }
 
     return (
@@ -28,6 +28,6 @@ const NotFound = () => {
             </div>
         </>
     )
-};
+}
 
-export default NotFound;
+export default NotFound

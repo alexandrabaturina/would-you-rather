@@ -1,10 +1,10 @@
-export const RECEIVE_USERS = 'RECEIVE_USERS';
+export const RECEIVE_USERS = 'RECEIVE_USERS'
 
 const receiveUsers = (users) => {
     return {
         type: RECEIVE_USERS,
         users,
     }
-};
+}
 
-export default receiveUsers;
+export default receiveUsers

@@ -1,19 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from 'react-router-dom';
-import { Container, Button } from "react-bootstrap";
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-import { handleAddQuestion } from "../actions/questions";
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from 'react-router-dom'
+import { Container, Button } from "react-bootstrap"
+import { Formik, Form, Field } from 'formik'
+import * as Yup from 'yup'
+import { handleAddQuestion } from "../actions/questions"
 
 const NewQuestion = () => {
 
-    let history = useHistory();
+    let history = useHistory()
 
-    const dispatch = useDispatch();
-    const authedUser = useSelector(state => state.authedUser);
+    const dispatch = useDispatch()
+    const authedUser = useSelector(state => state.authedUser)
 
     const redirectToHome = () => {
-        history.push("/");
+        history.push("/")
     }
 
     const validationSchema = Yup.object({
@@ -23,7 +23,7 @@ const NewQuestion = () => {
         optionTwo: Yup.string()
             .min(6, 'The answer should be at least 6 characters long.')
             .required('*Option two is required')
-    });
+    })
 
     return (
         <Container>
@@ -81,6 +81,6 @@ const NewQuestion = () => {
             </Formik>
         </Container>
     )
-};
+}
 
-export default NewQuestion;
+export default NewQuestion

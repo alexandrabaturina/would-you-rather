@@ -1,25 +1,25 @@
-import { useParams, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import VoteDetails from './VoteDetails';
-import VoteForm from './VoteForm';
+import { useParams, Redirect } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import VoteDetails from './VoteDetails'
+import VoteForm from './VoteForm'
 
 const Question = () => {
 
-    const { question_id: id } = useParams();
+    const { question_id: id } = useParams()
 
     //Get data from the store
-    const ids = useSelector(state => Object.keys(state.questions));
+    const ids = useSelector(state => Object.keys(state.questions))
 
     const isValid = ids.indexOf(id) === -1
         ? false
-        : true;
+        : true
 
     const avatar = useSelector(state => isValid
         ? state.users[state.authedUser].avatarURL
-        : null);
+        : null)
     const author = useSelector(state => isValid ?
         state.questions[id].author
-        : null);
+        : null)
     const isAnswered = useSelector(state => isValid
         ? (state.questions[id].optionOne.votes.indexOf(state.authedUser) !== -1) ||
         (state.questions[id].optionTwo.votes.indexOf(state.authedUser) !== -1)
@@ -28,7 +28,7 @@ const Question = () => {
 
     if (!isValid) {
         return <Redirect to='/404' />
-    };
+    }
 
     return (
         <div className='card-container'>
@@ -45,6 +45,6 @@ const Question = () => {
             </div>
         </div>
     )
-};
+}
 
-export default Question;
+export default Question

@@ -1,5 +1,5 @@
-import { Container, Table } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { Container, Table } from "react-bootstrap"
+import { useSelector } from "react-redux"
 
 const Leaderboard = () => {
 
@@ -50,4 +50,4 @@ const Leaderboard = () => {
         </Container>)
 }
 
-export default Leaderboard;
+export default Leaderboard

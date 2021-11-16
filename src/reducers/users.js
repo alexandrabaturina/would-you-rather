@@ -1,5 +1,5 @@
-import { RECEIVE_USERS } from '../actions/users';
-import { ADD_QUESTION, SAVE_ANSWER } from '../actions/questions';
+import { RECEIVE_USERS } from '../actions/users'
+import { ADD_QUESTION, SAVE_ANSWER } from '../actions/questions'
 
 const users = (state = {}, action) => {
     switch (action.type) {
@@ -7,7 +7,7 @@ const users = (state = {}, action) => {
             return {
                 ...state,
                 ...action.users,
-            };
+            }
         case ADD_QUESTION:
             const { author, id } = action.question
             return {
@@ -17,7 +17,7 @@ const users = (state = {}, action) => {
                     questions: state[author].questions
                         .concat([id])
                 }
-            };
+            }
         case SAVE_ANSWER:
             const { authedUser, qid, answer } = action.info
             return {
@@ -31,8 +31,8 @@ const users = (state = {}, action) => {
                 }
             }
         default:
-            return state;
+            return state
     }
-};
+}
 
-export default users;
+export default users

@@ -1,7 +1,7 @@
-import { Navbar, Nav, Container, NavbarBrand, Button } from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import setAuthedUser from "../actions/authedUser";
+import { Navbar, Nav, Container, NavbarBrand, Button } from 'react-bootstrap'
+import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
+import setAuthedUser from "../actions/authedUser"
 
 const NavBar = () => {
 
@@ -9,7 +9,7 @@ const NavBar = () => {
     const dispatch = useDispatch()
 
     const handleLogout = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         dispatch(setAuthedUser(null))
     }
 
@@ -47,6 +47,6 @@ const NavBar = () => {
             </Container>
         </Navbar>
     )
-};
+}
 
-export default NavBar;
+export default NavBar
