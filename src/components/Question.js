@@ -10,21 +10,20 @@ const Question = () => {
     //Get data from the store
     const ids = useSelector(state => Object.keys(state.questions))
 
-    const isValid = ids.indexOf(id) === -1
-        ? false
-        : true
+    const isValid = !(ids.indexOf(id) === -1)
+
+    const author = useSelector(state => isValid
+        ? state.questions[id].author
+        : null)
 
     const avatar = useSelector(state => isValid
-        ? state.users[state.authedUser].avatarURL
+        ? state.users[author].avatarURL
         : null)
-    const author = useSelector(state => isValid ?
-        state.questions[id].author
-        : null)
+
     const isAnswered = useSelector(state => isValid
         ? (state.questions[id].optionOne.votes.indexOf(state.authedUser) !== -1) ||
         (state.questions[id].optionTwo.votes.indexOf(state.authedUser) !== -1)
-        : null
-    )
+        : null)
 
     if (!isValid) {
         return <Redirect to='/404' />
