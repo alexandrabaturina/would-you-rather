@@ -24,7 +24,7 @@ let users = {
     brucemoose: {
         id: 'brucemoose',
         name: 'Bruce Moose',
-        avatarURL: 'https://svgcutsblog.com/blog/wp-content/uploads/2011/06/fox-soccer-svg.png',
+        avatarURL: 'http://svgcuts.com/fsvgfotw/2012/svgcuts_2012_12_15.png',
         answers: {
             "xj352vofupe1dqz9emx13r": 'optionOne',
             "vthrdm985a262al8qx3do": 'optionTwo',
