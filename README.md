@@ -14,13 +14,20 @@ The project has the following goals:
 Users are able to:
 * Answer questions
 * See which questions they haven’t answered
-* Ssee how other people have voted
+* See how other people have voted
 * Post questions
 * See the ranking of users on the leaderboard
+## Architecture
+In terms of architecture, the project meets the following requirements:
+1. Components read the necessary state from the store; they do not have their own versions of the same state.
+2. There are no direct API calls in the components' lifecycle methods.
+3. Most application state is managed by the Redux store (form inputs and controlled components have some state handled by the component).
+4. Updates are triggered by dispatching action creators to reducers.
+5. Components are modular and reusable.
 ## Getting Started
 To run **Would You Rather** in dev mode:
 1. Clone this repo.
-2. ```cd``` into project directory.
+2. ```cd``` into project directory.There are no direct API calls in the components' lifecycle methods.
 3. Install dependencies by running the following command:
 ```sh
 npm install
