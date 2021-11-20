@@ -36,6 +36,11 @@ The project has the following goals:
    * The option selected by the logged in user is clearly marked.
    * When the user is logged in, the details of the poll are shown. If the user is logged out, they are asked to log in before before being able to access the poll.
    * The application asks the user to sign in and shows a 404 page if that poll does not exist.
+* **Voting Mechanism**
+  * Upon voting in a poll, all of the information of the answered poll is displayed.
+  * The user’s response is recorded and is clearly visible on the poll details page.
+  * When the user comes back to the home page, the polling question appears in the *Answered* column.
+  * The data on the leaderboard changes appropriately.
 ## Architecture
 In terms of architecture, the project meets the following requirements:
 1. Components read the necessary state from the store; they do not have their own versions of the same state.
