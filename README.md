@@ -11,12 +11,18 @@ The project has the following goals:
 * Manage state using [Redux](https://redux.js.org/usage/configuring-your-store)
 * Leverage [React Router](https://reactrouter.com/web/guides/quick-start)
 ## Features
-Users are able to:
-* Answer questions
-* See which questions they haven’t answered
-* See how other people have voted
-* Post questions
-* See the ranking of users on the leaderboard
+* **Login Flow**
+  * There is a way for the user to og in as an existing user: a login box appears at the root of the application, and the user can select a name from the list of existing users.
+  * The application allows the user to log out and log back in. The user should be logged in to submit new polling questions, vote, and view the leaderboard.
+* **Home Page**
+  * The answered and unanswered polls are both available at the root.
+  * The user can alternate between viewing answered and unanswered polls.
+  * The unanswered questions are shown by default.
+  * The name of the logged in user is visible on the page.
+  * The user can navigate to the leaderboard.
+  * The user can navigate to the form that allows the user to create a new poll.
+  * The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
+  * A polling question links to details of that poll.
 ## Architecture
 In terms of architecture, the project meets the following requirements:
 1. Components read the necessary state from the store; they do not have their own versions of the same state.
