@@ -23,6 +23,19 @@ The project has the following goals:
   * The user can navigate to the form that allows the user to create a new poll.
   * The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
   * A polling question links to details of that poll.
+* **Poll Details**
+  * The details of the poll are available at ```questions/:question_id```.
+  * When a poll is clicked on the home page, the following is shown:
+    - The text *Would You Rather*.
+    - The picture of the user who posted the polling question.
+    - The two options.
+  * For *answered polls*, each of the two options contains the following:
+     - The text of the option.
+     - The number of people who voted for that option.
+     - The percentage of people who voted for that option.
+   * The option selected by the logged in user is clearly marked.
+   * When the user is logged in, the details of the poll are shown. If the user is logged out, they are asked to log in before before being able to access the poll.
+   * The application asks the user to sign in and shows a 404 page if that poll does not exist.
 ## Architecture
 In terms of architecture, the project meets the following requirements:
 1. Components read the necessary state from the store; they do not have their own versions of the same state.
