@@ -46,6 +46,17 @@ The project has the following goals:
   * The application shows the text *Would You Rather* and has a form for creating two options.
   * Upon submitting the form, a new poll is created and the user is taken to the home page.
   * The new polling question appears in the correct category on the home page.
+* **Leaderboard**
+  * The Leaderboard is available at ```/leaderboard```.
+  * Each entry on the leaderboard contains the following:
+    - The user’s name.
+    - The user’s picture.
+    - The number of questions the user asked.
+    - The number of questions the user answered.
+  * Users are ordered in descending order based on the sum of the number of questions they’ve answered and the number of questions they’ve asked.
+* **Navigation**
+  * The app contains a navigation bar that is visible on all of the pages.
+  * The user can navigate between the page for creating new polls, the leaderboard page, and the home page without typing the address into the address bar.
 ## Architecture
 In terms of architecture, the project meets the following requirements:
 1. Components read the necessary state from the store; they do not have their own versions of the same state.
