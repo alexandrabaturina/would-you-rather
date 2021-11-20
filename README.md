@@ -41,6 +41,11 @@ The project has the following goals:
   * The user’s response is recorded and is clearly visible on the poll details page.
   * When the user comes back to the home page, the polling question appears in the *Answered* column.
   * The data on the leaderboard changes appropriately.
+* **Adding New Poll**
+  * The form is available at ```/add```.
+  * The application shows the text *Would You Rather* and has a form for creating two options.
+  * Upon submitting the form, a new poll is created and the user is taken to the home page.
+  * The new polling question appears in the correct category on the home page.
 ## Architecture
 In terms of architecture, the project meets the following requirements:
 1. Components read the necessary state from the store; they do not have their own versions of the same state.
