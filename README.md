@@ -1,15 +1,15 @@
 # React ND: Would You Rather?
 
 ## Overview
-**Would You Rather?** is a frontend for web app that allows a user play the "Would You Rather?" game. The game goes like this: A user is asked a question in the form: "Would you rather [option A] or [option B] ?". Answering "neither" or "both" is against the rules.
+**Would You Rather?** is a frontend web app that allows a user to play the "Would You Rather?" game. The game goes like this: a user is asked a question in the form: "Would you rather ```[option A]``` or ```[option B]```?". Answering *"neither"* or *"both"* is against the rules.
 
 **Would You Rather** app is the capstone for [Udacity React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019?gclid=Cj0KCQjwrJOMBhCZARIsAGEd4VH6s1AtGuH3NE8TL2ScAp7Q_bEcZmYN70OLRFebZjCVR3Zmr4xCT3waAmMZEALw_wcB&utm_campaign=12712700850_c&utm_keyword=react%20udacity_e&utm_medium=ads_r&utm_source=gsem_brand&utm_term=124530973630) program.
 
 The project has the following goals:
-* Use [React](https://reactjs.org/) to build the application
-* Practice using [hooks](https://reactjs.org/docs/hooks-overview.html)
-* Manage state using [Redux](https://redux.js.org/usage/configuring-your-store)
-* Leverage [React Router](https://reactrouter.com/web/guides/quick-start)
+* Use [React](https://reactjs.org/) to build an application.
+* Practice using [hooks](https://reactjs.org/docs/hooks-overview.html).
+* Manage state using [Redux](https://redux.js.org/usage/configuring-your-store).
+* Leverage [React Router](https://reactrouter.com/web/guides/quick-start).
 ## Features
 * **Login Flow**
   * There is a way for the user to og in as an existing user: a login box appears at the root of the application, and the user can select a name from the list of existing users.
