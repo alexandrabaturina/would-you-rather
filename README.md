@@ -10,6 +10,9 @@ The project has the following goals:
 * Practice using [hooks](https://reactjs.org/docs/hooks-overview.html).
 * Manage state using [Redux](https://redux.js.org/usage/configuring-your-store).
 * Leverage [React Router](https://reactrouter.com/web/guides/quick-start).
+* Deploy React application using [Amazon Web Services](aws.amazon.com).
+
+Verify AWS deployment [here](http://would-you-rather-app.s3-website-us-west-2.amazonaws.com).
 ## Features
 ### Login Flow
 * There is a way for the user to ***log in*** as an existing user:
